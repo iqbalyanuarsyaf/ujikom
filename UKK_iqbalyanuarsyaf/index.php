@@ -31,7 +31,7 @@
                 <div class="card footer text-center">
                     <a href="">10 suka</a>
                     <a href="">3 komentar</a>
-                </div>
+</div>
             </div>
         </div>
     </div>

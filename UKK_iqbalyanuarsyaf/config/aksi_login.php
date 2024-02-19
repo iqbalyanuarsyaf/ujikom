@@ -10,7 +10,10 @@ $sql = mysqli_query($koneksi, "SELECT * FROM user WHERE username='$username' AND
 $cek = mysqli_num_rows($sql);
 
 if ($cek> 0) {
-    $_SESSION['username'] = $username;
+    $data = mysqli_fetch_array($sql);
+    
+    $_SESSION['username'] = $data['usermane'];
+    $_SESSION['userid'] = $data['userid'];
     $_SESSION['status'] = 'login';
     echo "<script>
     alert('Login Berhasil')
