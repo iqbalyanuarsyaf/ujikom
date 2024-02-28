@@ -27,6 +27,7 @@
         </button>
         <div class="collapse navbar-collapse mt-2" id="navbarNavAltMarkup">
         <div class="navbar-nav me-auto">
+        <a href="home.php" class="nav-link">Home</a>
         <a href="album.php" class="nav-link">Album</a>
         <a href="foto.php" class="nav-link">Foto</a>
         </div>
@@ -50,7 +51,8 @@
                             <label class="form-label">Album</label>
                             <select class="form-control" name="albumid" required>
                                 <?php
-                                $sql_album = mysqli_query($koneksi, "SELECT * FROM album");
+                                $userid = $_SESSION['userid'];
+                                $sql_album = mysqli_query($koneksi, "SELECT * FROM album WHERE userid='$userid'");
                                 while($data_album = mysqli_fetch_array($sql_album)){ ?>
                                 <option value="<?php echo $data_album['albumid'] ?>"><?php echo $data_album['namaalbum'] ?></option>
                                 <?php } ?>
@@ -113,7 +115,8 @@
                                                 <label class="form-label">Album</label>
                             <select class="form-control" name="albumid">
                                 <?php 
-                                $sql_album = mysqli_query($koneksi, "SELECT * FROM album");
+                                $userid = $_SESSION['userid'];
+                                $sql_album = mysqli_query($koneksi, "SELECT * FROM album WHERE userid='$userid'");
                                 while($data_album = mysqli_fetch_array($sql_album)){ ?>
                                 <option <?php if($data_album['albumid'] == $data['albumid']) {?> selected="selected" <?php } ?> value="<?php echo $data_album['albumid'] ?>"><?php echo $data_album['namaalbum'] ?></option>
                                 <?php } ?>
