@@ -71,7 +71,7 @@ while($row = mysqli_fetch_array($album)){ ?>
                     $like = mysqli_query($koneksi, "SELECT * FROM likefoto WHERE fotoid='$fotoid'");
                     echo mysqli_num_rows($like). ' Suka';
                     ?>
-                    <a href=""><i class="fa-regular fa-comment"></i></a> 3 komentar
+                    <a href=""><i class="fa-regular fa-comment"></i></a> 1 komentar
 </div>
             </div>
         </div>
@@ -97,7 +97,7 @@ while($data = mysqli_fetch_array($query)){
                     $like = mysqli_query($koneksi, "SELECT * FROM likefoto WHERE fotoid='$fotoid'");
                     echo mysqli_num_rows($like). ' Suka';
                     ?>
-                    <a href=""><i class="fa-regular fa-comment"></i></a> 3 komentar
+                    <a href=""><i class="fa-regular fa-comment"></i></a> 1 komentar
 </div>
             </div>
         </div>

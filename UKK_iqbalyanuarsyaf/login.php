@@ -29,7 +29,7 @@
             <div class="card">
                 <div class="card-body bg-light">
                     <div class="text-center">
-                        <h5>Login Aplikasi</h5>
+                        <h5>Login Akun Anda</h5>
                     </div>
                     <form action="config/aksi_login.php" method="POST">
                         <label class="form-label">Username</label>
