@@ -64,14 +64,18 @@ while($row = mysqli_fetch_array($album)){ ?>
                     $fotoid = $data['fotoid'];
                     $ceksuka =mysqli_query($koneksi, "SELECT *FROM likefoto WHERE fotoid='$fotoid' AND userid='$userid'");
                     if (mysqli_num_rows($ceksuka) == 1) { ?>
-                      <a href="../config/proses_like.php?fotoid=<?php echo $data['fotoid'] ?>" type="submit" name="batalsuka"><i class="fa fa-heart"></i></a>
+                      <a href="../config/proses_like_home.php?fotoid=<?php echo $data['fotoid'] ?>" type="submit" name="batalsuka"><i class="fa fa-heart"></i></a>
                     <?php }else{ ?>
-                      <a href="../config/proses_like.php?fotoid=<?php echo $data['fotoid'] ?>" type="submit" name="suka"><i class="fa-regular fa-heart"></i></a>
+                      <a href="../config/proses_like_home.php?fotoid=<?php echo $data['fotoid'] ?>" type="submit" name="suka"><i class="fa-regular fa-heart"></i></a>
                       <?php }
                     $like = mysqli_query($koneksi, "SELECT * FROM likefoto WHERE fotoid='$fotoid'");
                     echo mysqli_num_rows($like). ' Suka';
                     ?>
-                    <a href=""><i class="fa-regular fa-comment"></i></a> 1 komentar
+                    <a href="#" type="button" data-bs-toggle="modal" data-bs-target="#komentar<?php echo $data['fotoid']?>"><i class="fa-regular fa-comment"></i></a>
+                    <?php
+                        $jmlkomen = mysqli_query($koneksi, "SELECT * FROM komentarfoto WHERE fotoid='$fotoid'");
+                        echo mysqli_num_rows($jmlkomen).' komentar';
+                        ?>
 </div>
             </div>
         </div>
@@ -90,14 +94,18 @@ while($data = mysqli_fetch_array($query)){
                     $fotoid = $data['fotoid'];
                     $ceksuka =mysqli_query($koneksi, "SELECT *FROM likefoto WHERE fotoid='$fotoid' AND userid='$userid'");
                     if (mysqli_num_rows($ceksuka) == 1) { ?>
-                      <a href="../config/proses_like.php?fotoid=<?php echo $data['fotoid'] ?>" type="submit" name="batalsuka"><i class="fa fa-heart"></i></a>
+                      <a href="../config/proses_like_home.php?fotoid=<?php echo $data['fotoid'] ?>" type="submit" name="batalsuka"><i class="fa fa-heart"></i></a>
                     <?php }else{ ?>
-                      <a href="../config/proses_like.php?fotoid=<?php echo $data['fotoid'] ?>" type="submit" name="suka"><i class="fa-regular fa-heart"></i></a>
+                      <a href="../config/proses_like_home.php?fotoid=<?php echo $data['fotoid'] ?>" type="submit" name="suka"><i class="fa-regular fa-heart"></i></a>
                       <?php }
                     $like = mysqli_query($koneksi, "SELECT * FROM likefoto WHERE fotoid='$fotoid'");
                     echo mysqli_num_rows($like). ' Suka';
                     ?>
-                    <a href=""><i class="fa-regular fa-comment"></i></a> 1 komentar
+                    <a href="#" type="button" data-bs-toggle="modal" data-bs-target="#komentar<?php echo $data['fotoid']?>"><i class="fa-regular fa-comment"></i></a>
+                    <?php
+                        $jmlkomen = mysqli_query($koneksi, "SELECT * FROM komentarfoto WHERE fotoid='$fotoid'");
+                        echo mysqli_num_rows($jmlkomen).' komentar';
+                        ?>
 </div>
             </div>
         </div>
